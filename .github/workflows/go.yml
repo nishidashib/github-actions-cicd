@@ -16,9 +16,10 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-versions: 1.17
-      # build
+      # build ...とは？
       - name: Build
-        run: go build -v ./...
+        # ./... はワイルドカードで　再起的やって。https://jablogs.com/detail/7789
+        run: go build -v ./... # -v => print the names of packages as they are compiled.
       # test
       - name: Test
         run: go test -v ./...
